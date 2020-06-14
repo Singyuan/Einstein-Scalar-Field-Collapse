@@ -10,7 +10,7 @@ function myParameters()
 % set the parameter of constant
 
 fg = 0.8; % CFL constant
-T = 20; % total time
+T = 5; % total time
 
 
 rend = 30; % end point of r

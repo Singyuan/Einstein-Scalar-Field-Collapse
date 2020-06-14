@@ -25,4 +25,8 @@ A(1, :) = [drDense^2 1];
 A(2, :) = [4*drDense^2 1];
 SOLNEARZERO = inv(A);
 
+% prepare output data
+data.centralalpha = 0;
+data.timecoord  = 0;
+
 save('vari.mat')
