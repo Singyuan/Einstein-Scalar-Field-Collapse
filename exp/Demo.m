@@ -72,8 +72,7 @@ while totaltime < T+0.2
     
     % Record the data
     if totaltime >= recordtime
-        centralalpha(recorder) = alphaAdap(1);
-        timecoord(recorder) = totaltime;
+        data = DataPlot(data, recorder, totaltime, alphaAdap);
         recorder = recorder+1;
         recordtime = recordtime+0.2;
     end
@@ -126,7 +125,7 @@ if ismovie == 1
 end
 
 %Output the data
-h = plot(timecoord, centralalpha,'LineWidth',1.5);
+h = plot(data.timecoord, data.centralalpha,'LineWidth',1.5);
 xlabel('time')
 axis([-inf, inf, 0, 1])
 title('central of alpha')
