@@ -1,6 +1,6 @@
 %% myfourdudr
 %  Construct the diffusion term by 4 times derivative.
-%  Please refer to  
+%  Please refer to Kreiss and Oliger (1973)
 %
 %  Syntax
 %
