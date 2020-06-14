@@ -1,13 +1,13 @@
-# Scalar-field-collapse
-This project is about simulation the evolution of scalar field.
+# Einstein-Scalar-Field-Collapse
+This project is about numerical simulation the evolution of Einstein scalar field in spacetime.
 
 ## Preliminary
 Choptuik presented a numerical study of spherically symmetric collapse of Einstein scalar field equations. Please refer to Choptuik [1] or https://singyuan.github.io/projects/NTU/Numerical_Relativity.html . Let a 4-metric <img src="https://render.githubusercontent.com/render/math?math=g=\alpha^2dt^2%2Ba^2dr^2%2Br^2d\Omega^2">. Then, given initial scalar field, we use Einstein scalar fields to solve functions <img src="https://render.githubusercontent.com/render/math?math=a"> and <img src="https://render.githubusercontent.com/render/math?math=\alpha">.
 
 ## Introduction
-Given a initial scalar field, the behavior the evolution of scalar field will be shown. In this project, the initial scalar field is chosen as <img src="https://render.githubusercontent.com/render/math?math=\psi_A(r)=Ar^2e^{-(r-5)^2}">. Hence, the parameter <img src="https://render.githubusercontent.com/render/math?math=A"> can be chosen in "exp/myParameter".
+Given a initial scalar field, the behavior the evolution of scalar field will be shown. In this project, the initial scalar field is chosen as <img src="https://render.githubusercontent.com/render/math?math=\psi_A(r)=Ar^2e^{-(r-5)^2}">. Hence, the parameter <img src="https://render.githubusercontent.com/render/math?math=A"> can be chosen in "exp/myParameters".
 
->Note: Don't choose amplitude lager than 0.00015, which will collapse the spacetime. That is, the program cannot finish. In fact, there are many parameter can be change for initial scalar field, <img src="https://render.githubusercontent.com/render/math?math=\psi_A(r)=phi0r^{pow}e^{-(r-r0)^q}">.
+>Note: Don't choose amplitude lager than 0.00015, which will collapse the spacetime. That is, the program cannot finish. In fact, there are many parameters can be change for initial scalar field, <img src="https://render.githubusercontent.com/render/math?math=\psi_A(r)=phi0r^{pow}e^{-(r-r0)^q}">.
 
 There are two output in folder "result", including of evolution of scalar field and central value of the lapse function <img src="https://render.githubusercontent.com/render/math?math=\alpha">. Because some of Matlab cannot support creating video, if it happens, it will output the image of scalar field every coordinate time.
 
