@@ -1,6 +1,7 @@
 %% Test of scalar field equatiion
 %  Test of scalar field equatiion
 %  Please refer to https://singyuan.github.io/projects/NTU/Numerical_Relativity.html
+%  Also refer to Choptuik (1993)
 %
 %  Syntax
 %
@@ -23,6 +24,7 @@ myParameters(); % set all parameter
 SetVariable()
 load('para.mat')
 load('vari.mat')
+logtxt() % record log
 
 % Initial step t = 0
 totaltime = 0.0;
@@ -123,7 +125,7 @@ end
 % Output the movie or plot
 if ismovie == 1
     video = VideoWriter([pwd '\..\result\scalarfield\test.avi']);
-    video.FrameRate = 5;
+    video.FrameRate = 10;
     open(video)
     writeVideo(video, frame);
     close(video);
