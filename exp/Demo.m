@@ -10,6 +10,10 @@
 clear;clc;close all;
 addpath('./../src')
 
+% Count time
+t0 = clock;
+elapsetime = 15;
+
 % Set global variables
 % Global variabvle about iteration of CN
 global ICN 
@@ -79,8 +83,9 @@ while totaltime < T
     v = interp1(rAdap, alphaAdap./aAdap, rDense);
     [sf.phi, sf.pi, sf.origin] = IterCrankNicolson(sf.phi, sf.pi, sf.origin, v, rDense, drDense, dt);
     
-    if mod(iter, 20) == 0
-        disp(['Amplitude:' num2str(phi0), ', time: ', num2str(totaltime), ',  dt: ', num2str(dt), ',  j: ', num2str(iter)])
+    if etime(clock, t0) > elapsetime
+        disp(['Progress: ', num2str(100*totaltime/T), ' %, dt: ', num2str(dt), ', Elapse time: ',  num2str(etime(clock, t0)), ', Iteration: ', num2str(iter)])
+        elapsetime = elapsetime+15;
     end
     iter = iter+1;
 end
