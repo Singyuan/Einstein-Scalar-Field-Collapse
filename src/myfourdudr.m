@@ -1,3 +1,11 @@
+%% myfourdudr
+%  Construct the diffusion term by 4 times derivative.
+%
+%  Syntax
+%
+%  Descriptions
+%
+%%
 function DD = myfourdudr(u)
 uDiff = u(5:end)+u(1:end-4)-4*u(4:end-1)-4*u(2:end-3)+6*u(3:end-2);
 dudr = uDiff;

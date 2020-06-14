@@ -1,3 +1,12 @@
+%% my5orderdudr_Gust
+%  Compute the derivative by summation by part.
+% Please refer to Gustanfsson (2008) and Strand (1994)
+%
+%  Syntax
+%
+%  Descriptions
+%
+%%
 function dudr = my5orderdudr_Gust(u, drDense)
 uDiff = u(3:end)-u(1:end-2);
 dudr2h = uDiff./(2*drDense);

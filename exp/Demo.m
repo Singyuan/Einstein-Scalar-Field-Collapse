@@ -11,17 +11,15 @@ clear;clc;close all;
 addpath('./../src')
 
 % Set global variables
-global ICN % global variabvle about iteration of CN
-myParameters(); % set all parameter
-load('para.mat')
-sf = SetInitSf(rDense);
+% Global variabvle about iteration of CN
+global ICN 
 
-% Set the ode solver
-odeinput4a.opts = odeset('RelTol', 1e-5, 'MaxStep', MaxStep4a, 'Events', @StopEvents);
-odeinput4a.range = [0, rend];
-odeinput4a.ic = ica;
-odeinput4alpha.opts = odeset('RelTol', 1e-5, 'MaxStep', MaxStep4alpha);
-odeinput4alpha.range = [0, rend];
+
+myParameters(); % set all parameter
+SetVariable()
+load('para.mat')
+load('vari.mat')
+sf = SetInitSf(rDense);
 
 % Initial step t = 0
 totaltime = 0.0;
@@ -81,7 +79,7 @@ while totaltime < T
     v = interp1(rAdap, alphaAdap./aAdap, rDense);
     [sf.phi, sf.pi, sf.origin] = IterCrankNicolson(sf.phi, sf.pi, sf.origin, v, rDense, drDense, dt);
     
-    if mod(iter, 5) == 0
+    if mod(iter, 20) == 0
         disp(['Amplitude:' num2str(phi0), ', time: ', num2str(totaltime), ',  dt: ', num2str(dt), ',  j: ', num2str(iter)])
     end
     iter = iter+1;
